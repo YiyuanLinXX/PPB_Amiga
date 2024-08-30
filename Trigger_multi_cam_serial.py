@@ -11,7 +11,6 @@ class TriggerType:
     SOFTWARE = 1
     HARDWARE = 2
 
-
 CHOSEN_TRIGGER = TriggerType.SOFTWARE
 AUTO_EXPOSURE = True
 
