@@ -79,6 +79,6 @@ To connect to the Thorvald GPS, connect to the Thorvald Wifi. From here, you can
 ## Data Acquisition
 
 ```bash
-python3 Trigger_multi_cam_serial.py <folder> 0 0
+python3 Trigger_multi_cam_serial.py <path/to/folder/to/save/data> 0 0
 ```
 
