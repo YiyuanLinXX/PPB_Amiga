@@ -1,0 +1,17 @@
+
+/**:
+  ros__parameters:
+    topics:
+      navigation:
+        topic   : cmd_vel_nav
+        timeout : 0.5
+        priority: 50
+      blocker:
+        topic : cmd_vel_blocker
+        timeout : 0.5
+        priority: 75
+      joystick:
+          topic   : teleop_joy/cmd_vel
+          timeout : 0.5
+          priority: 100
+

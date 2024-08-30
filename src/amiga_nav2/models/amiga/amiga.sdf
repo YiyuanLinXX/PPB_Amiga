@@ -1,0 +1,63 @@
+<sdf version='1.7'>
+  <model name='amiga_robot'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 -0.002857 0.057143 0 -0 0</pose>
+        <mass>210</mass>
+        <inertia>
+          <ixx>17.348</ixx>
+          <ixy>-4.46627e-16</ixy>
+          <ixz>4.94842e-16</ixz>
+          <iyy>17.3311</iyy>
+          <iyz>0.0857143</iyz>
+          <izz>31.2563</izz>
+        </inertia>
+      </inertial>
+      <visual name='base_link_visual'>
+        <pose>0 0 0.6 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://amiga_nav2/meshes/amiga_body.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__front_left_wheel_visual_1'>
+        <pose>0.51 0.5 0.2 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://amiga_nav2/meshes/amiga_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__front_right_wheel_visual_2'>
+        <pose>0.51 -0.52 0.2 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://amiga_nav2/meshes/amiga_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__rear_left_wheel_visual_3'>
+        <pose>-0.51 0.5 0.2 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://amiga_nav2/meshes/amiga_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__rear_right_wheel_visual_4'>
+        <pose>-0.51 -0.52 0.2 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://amiga_nav2/meshes/amiga_wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot name="amiga_robot">
+  <material name="dark_black">
+    <color rgba="0.05 0.05 0.05 1"/>
+  </material>
+  <material name="white">
+    <color rgba="0.9 0.9 0.9 1"/>
+  </material>
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.6" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://amiga_nav2/meshes/amiga_body.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <inertial>
+    	<mass value="150"/>
+    	<inertia ixx=".0122666" ixy="0.0" ixz="0.0" iyz="0.0" iyy="0.0" izz="0.02"/>
+    </inertial>
+  </link>
+
+   <!-- Wheel Links -->
+  <link name="front_left_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://amiga_nav2/meshes/amiga_wheel.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_black"/>
+
+    </visual>
+    
+    <inertial>
+    	<mass value="15"/>
+    	<inertia ixx=".002788" ixy="0.0" ixz="0.0" iyz="0.0" iyy="0.002708" izz="0.005"/>
+    </inertial>
+  </link>
+  
+  <link name="front_right_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://amiga_nav2/meshes/amiga_wheel.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_black"/>
+    </visual>
+    <inertial>
+    	<mass value="15"/>
+    	<inertia ixx=".002788" ixy="0.0" ixz="0.0" iyz="0.0" iyy="0.002708" izz="0.005"/>
+    </inertial>
+  </link>
+
+  <link name="rear_left_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://amiga_nav2/meshes/amiga_wheel.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_black"/>
+    </visual>
+    <inertial>
+    	<mass value="15"/>
+    	<inertia ixx=".002788" ixy="0.0" ixz="0.0" iyz="0.0" iyy="0.002708" izz="0.005"/>
+    </inertial>
+  </link>
+
+  <link name="rear_right_wheel">
+    <visual>
+      <geometry>
+        <mesh filename="package://amiga_nav2/meshes/amiga_wheel.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_black"/>
+    </visual>
+    <inertial>
+    	<mass value="15"/>
+    	<inertia ixx=".002788" ixy="0.0" ixz="0.0" iyz="0.0" iyy="0.002708" izz="0.005"/>
+    </inertial>
+  </link>
+
+  <!-- Joints -->
+  <!-- Adjust the origin xyz values according to the actual dimensions of your robot -->
+  <joint name="front_left_wheel_joint" type="fixed">
+    <origin xyz="0.51 0.5 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="front_right_wheel_joint" type="fixed">
+    <origin xyz="0.51 -0.52 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="rear_left_wheel_joint" type="fixed">
+    <origin xyz="-0.51 0.5 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rear_left_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="rear_right_wheel_joint" type="fixed">
+    <origin xyz="-0.51 -0.52 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rear_right_wheel"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0 0.068" rpy="0 0 0"/>
+  </joint>
+
+  <link name="imu_link"/>
+
+  <!-- Add the gps link so we get a static transform for the GPS -->
+  <joint name="gps_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="gps_link"/>
+
+
+</robot>
